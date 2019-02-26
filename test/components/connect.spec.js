@@ -103,6 +103,7 @@ describe('React', () => {
         const store = createStore(() => ({ hi: 'there' }))
 
         const Container = React.memo(props => <Passthrough {...props} />)
+        Container.displayName = 'Passthrough'
         const WrappedContainer = connect(state => state)(Container)
 
         const tester = rtl.render(
